@@ -43,8 +43,7 @@ A **SwiftUI-based iOS application** that allows users to **search and explore im
 
 
 
-https://github.com/user-attachments/assets/158e89ea-ce7c-458c-9171-dafd53d0d23c
-
+https://github.com/user-attachments/assets/2ac0d315-2101-4ddf-afbf-103ddd0d6ba4
 
 
 
