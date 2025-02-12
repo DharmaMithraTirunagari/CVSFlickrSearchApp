@@ -60,6 +60,7 @@ FlickrSearchApp/
 ├── Network/
 │   ├── Endpoints.swift           # API Endpoint Constants
 │   ├── FlickrService.swift       # API Call Logic
+│   ├── MockFlickrService.swift   # API Mocking for Tests
 │   ├── NetworkError.swift        # Enum for API Errors
 │   ├── NetworkManager.swift      # Handles API Requests
 │
@@ -151,6 +152,7 @@ CMD + U  # Run UI Tests
 
 ### ✅ **Accessibility Enhancements**
 - **VoiceOver Labels**: All images and buttons include `accessibilityLabel`.
+- **Dynamic Text Sizing**: Supports **`dynamicTypeSize(.xSmall ... .accessibilityExtraExtraLarge)`**, ensuring text scales appropriately for users with different font size preferences.
 
 ### ✅ **Error Handling**
 - **Network errors are caught gracefully** with meaningful user messages.
@@ -165,15 +167,6 @@ CMD + U  # Run UI Tests
 
 ---
 
-
-## 🔹 Contributing
-
-Contributions are welcome!  
-- Fork the repository  
-- Create a new branch (`feature-xyz`)  
-- Open a pull request  
-
----
 
 ## 🤝 Acknowledgements
 
