@@ -36,20 +36,20 @@ final class ImageSearchViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
-    /// Fetches images based on search text
+    // Fetches images based on search text
     func fetchImages() async {
         let query = searchText.isEmpty ? Constants.API.defaultSearchQuery : searchText
-        isLoading = true // ✅ Start loading
-        errorMessage = nil // Clear previous errors
+        isLoading = true 
+        errorMessage = nil
 
         do {
             let fetchedImages = try await flickrService.fetchImages(for: query)
             self.images = fetchedImages
         } catch {
             self.errorMessage = "Failed to load images. Please try again."
-            self.images = [] // ✅ Clear images on failure
+            self.images = []
         }
 
-        isLoading = false // ✅ Stop loading
+        isLoading = false
     }
 }

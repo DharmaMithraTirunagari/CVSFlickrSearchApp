@@ -31,6 +31,7 @@ struct ImageDetailView: View {
             VStack(alignment: .leading, spacing: 12) {
                 Text(image.title ?? "Untitled Image")
                     .font(.title3)
+                    .dynamicTypeSize(.xSmall ... .xLarge)
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.leading)
                     .lineLimit(nil)
@@ -40,24 +41,30 @@ struct ImageDetailView: View {
                 HStack {
                     Text("📸 Author: ")
                         .fontWeight(.medium)
+                        .dynamicTypeSize(.xSmall ... .xLarge)
                     Text(image.parsedAuthor)
                         .foregroundColor(.secondary)
+                        .dynamicTypeSize(.xSmall ... .xLarge)
                         .accessibilityLabel("Author: \(image.parsedAuthor)")
                 }
 
                 HStack {
                     Text("🗓 Published: ")
                         .fontWeight(.medium)
+                        .dynamicTypeSize(.xSmall ... .xLarge)
                     Text(image.formattedPublishedDate)
                         .foregroundColor(.secondary)
+                        .dynamicTypeSize(.xSmall ... .xLarge)
                 }
 
                 if let width = image.dimensions.width, let height = image.dimensions.height {
                     HStack {
                         Text("📏 Size: ")
                             .fontWeight(.medium)
+                            .dynamicTypeSize(.xSmall ... .xLarge)
                         Text("\(width) x \(height) pixels")
                             .foregroundColor(.secondary)
+                            .dynamicTypeSize(.xSmall ... .xLarge)
                     }
                 }
 

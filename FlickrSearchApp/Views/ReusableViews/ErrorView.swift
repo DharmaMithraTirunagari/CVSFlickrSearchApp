@@ -33,7 +33,7 @@ struct ErrorView: View {
             }
             .padding(.horizontal, 40)
         }
-        .applyCardStyle() // Uses our View Extension
+        .applyCardStyle() 
     }
 }
 
