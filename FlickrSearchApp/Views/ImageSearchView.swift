@@ -21,12 +21,20 @@ struct ImageSearchView: View {
                     .accessibilityLabel("Flickr Search App")
 
                 SearchBar(searchText: $viewModel.searchText) {
-                    Task{
+                    Task {
                         await viewModel.fetchImages()
                     }
                 }
 
-                if !viewModel.images.isEmpty {
+                if let errorMessage = viewModel.errorMessage {
+                    ErrorView(message: errorMessage) {
+                        Task {
+                            await viewModel.fetchImages() 
+                        }
+                    }
+                    .padding(.horizontal)
+                    .transition(.opacity)
+                } else if !viewModel.images.isEmpty {
                     ImageGridView(images: viewModel.images)
                         .transition(.opacity)
                 } else if viewModel.isLoading {
@@ -40,6 +48,7 @@ struct ImageSearchView: View {
             }
             .padding(.top, 12)
             .navigationBarHidden(true)
+            
         }
     }
 }
@@ -47,3 +56,7 @@ struct ImageSearchView: View {
 #Preview {
     ImageSearchView()
 }
+
+
+
+

@@ -11,9 +11,7 @@ struct ImageGridView: View {
     let images: [FlickrImage]
 
     private let columns = [
-        GridItem(.flexible(), spacing: 1),
-        GridItem(.flexible(), spacing: 1),
-        GridItem(.flexible(), spacing: 1)
+        GridItem(.adaptive(minimum: 100), spacing: 10)
     ]
     
     var body: some View {
